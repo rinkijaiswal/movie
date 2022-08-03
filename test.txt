@@ -1,0 +1,19 @@
+1. Create and remove session
+    (Request $request)
+    create:   $request->session()->put('login',true);
+    remove:   $request->session()->remove('login');
+    session is used to store data and to use the data in your website anywhere.
+
+2. Redirection
+    return redirect('/login');
+    return redirect('/login')->with('message','login successfull');
+
+    if(Session::has('message')){
+        {{Session::get('message')}};
+    }
+
+3. Tinker - it is used to run database query from terminal
+    a) php artisan tinker
+    b) run query example
+        App\Models\Admin::get();
+    C) exit
